@@ -20,29 +20,19 @@ body {
 }
 
 #langBody{
-    overflow: hidden;     /*UNCOMMENT HERE WHEN DONE*/
+    overflow: hidden;     
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#extraBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card{
     background-color: white;
     width: 75%;
-    height: 120vh;
+    height: 130vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,12 +47,16 @@ select {
 #groupCard{
     height: 80vh;
     /*width: 65vw;*/
-    /*margin: 18vh 30vw;*/
+    margin: 18vh 30vw;*/
 }
 
 #langCard{
     height: 95vh;
     margin: 2vh 30vw;*/
+}
+
+#extraCard{
+    height: 240vh;
 }
 
 .photo-wrapper{
@@ -87,7 +81,9 @@ select {
 }
 
 .photo-wrapp,
-.lang-photo-wrapp{
+.ind-photo-wrapp,
+.lang-photo-wrapp,
+.extra-photo-wrapp{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -100,29 +96,66 @@ select {
 
 .photo-wrapp{
     order: 2;
-    height: 80vh;
+    height: 100%;
 }
+
+.ind-photo-wrapp{
+    height: 100%;
+    order: 2;
+}
+
 .lang-photo-wrapp{
     order: 1;
-    height: 95vh;
+    height: 100%;
+}
+
+.extra-photo-wrapp{
+    order: 2;
+    height: 100%;
+}
+
+#extraCard #group-photo,
+#extraCard #lang-photo,
+#extraCard #extra-photo{
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+    width: auto;
 }
 
 #group-photo{
-    object-fit: cover;
-    height: 80.5vh;
-    width: auto;
-    overflow: hidden;
+    height: 100vh;
 }
 
 #lang-photo{
-    object-fit: cover;
-    height: 95vh;
-    width: auto;
-    overflow: hidden;
+    height: 100vh;
+}
+
+#extraBody img{
+    display: block;
+}
+
+#extra-photo{
+    position: relative;
+    height: 150vh;
+    z-index: 0;
+}
+
+#extra-photo::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(to bottom,rgba(0, 0, 0, 0.931), #7c4b1028, #F4A950), url('../images/1.jpg') center center no-repeat; /* Adjust the gradient as needed */
+    pointer-events: none;
+    z-index: 2;
 }
 
 #groupBody form{
-    transform: translateY(-10%);
+    transform: translateY(-18%);
 }
 
 #indBody form{
@@ -130,18 +163,22 @@ select {
 }
 
 #langBody form{
-    transform: translateY(-13%);
+    transform: translateY(-17%);
 }
 
-.photo{
+#extraBody form{
+    transform: translateY(-5%);
+}
+
+/*.photo{
     /*background: linear-gradient(to bottom,rgba(0, 0, 0, 0.931), #7c4b1028, #F4A950), url('../images/1.jpg') center center no-repeat;*/
     /*background: linear-gradient(to bottom,rgb(0, 0, 0), #104b7c17, #193b516c) ,url('../images/1.jpg') center center no-repeat;
     background-size: cover;
     order: 2;
     height: 100vh;
     width: 100%;
-    /*border: 2px solid red;*/
-}
+    /*border: 2px solid red;
+}*/
 
 .page{
     position: absolute;
@@ -156,6 +193,13 @@ select {
     align-items: center;
     margin: 50%;
     /*border: 2px solid red;*/
+}
+
+#extraBody .page{
+    margin-bottom: 90%;
+}
+
+#langBody .page{
 }
 
 
@@ -192,6 +236,7 @@ select {
 #group-logo{
     /*margin-bottom: 1%;*/
     /*border: 1px solid red;*/
+    transform: translateY(-20%)
 }
 
 #lang-logo{
@@ -215,9 +260,17 @@ select {
     margin-top: 10%;
 }
 
+h2 {
+    font-size: 200%;
+    font-weight: 600;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    color: #1E4981;
+}
+
 #groupBody h2{
     position: relative;
-    transform: translateY(-90%);
+    transform: translateY(-120%);
 }
 
 #indBody h2{
@@ -230,23 +283,42 @@ select {
     transform: translateY(-160%);
 }
 
-.ageGender{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    flex-direction: row;
+#extraBody h2{
+    position: relative;
+    transform: translateY(-140%);
 }
 
-.ageWrapper{
-    width: 50%;
-    margin-right: 10%;
+h3 {
+    font-size: 150%;
+    font-weight: 600;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
 
-.genderWrapper {
-    width: 100%;
+h4 {
+    font-size: 120%;
+    font-weight: 600;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: 520;
+}
+
+#declare{
+    margin-top: 8%;
+}
+
+#date{
+    margin-top: 8%;
 }
 
 input,
+select,
 .options {
     /* Custom styles for all text input boxes */
     width: 100%;
@@ -255,6 +327,14 @@ input,
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 10px;
+}
+
+.extended {
+    height: 100px;
+}
+
+.extended[placeholder]{
+    top: 0;
 }
 
 select::after {
@@ -282,6 +362,22 @@ optgroup{
     font-family: "Euclid Circular A", "Poppins","Raleway","Helvetica", sans-serif;
 }
 
+.ageGender{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+}
+
+.ageWrapper{
+    width: 50%;
+    margin-right: 10%;
+}
+
+.genderWrapper {
+    width: 100%;
+}
+
 #genInc {
     display: flex;
     justify-content: start;
@@ -294,10 +390,11 @@ optgroup{
 .container {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 30px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-weight: 400;
+  font-size: 80%;
+  font-weight: 410;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -321,8 +418,8 @@ optgroup{
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 21px;
+  width: 21px;
   background-color: #eee;
 }
 
@@ -351,8 +448,8 @@ optgroup{
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
+  left: 7px;
+  top: 2.6px;
   width: 5px;
   height: 10px;
   border: solid white;
@@ -396,6 +493,7 @@ button:hover {
     display: flex;
     justify-content: left;
     align-items: center;
+    transform: translateY(50%)
 }
 
 #langBody button{
@@ -403,6 +501,14 @@ button:hover {
     display: flex;
     justify-content: left;
     align-items: center;
+    color: white;
+}
+
+#extraBody button{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    transform: translateY(50%);
 }
 
 body {
