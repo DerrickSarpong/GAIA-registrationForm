@@ -5,22 +5,20 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    scroll-behavior: smoother9;
+    scroll-behavior: smoother;
     background: #1E4981;
     background: linear-gradient(to right, #1E4981, #2E9AFE);
     background: -webkit-linear-gradient(to right, #1E4981, #2E9AFE);
-    overscroll-behavior: none;
+    overflow-y: auto; 
 }
 
 #groupBody{
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #langBody{
-    overflow: hidden;     
 }
 
 #extraBody{
@@ -31,8 +29,8 @@ body {
 
 .card{
     background-color: white;
-    width: 75%;
-    height: 130vh;
+    min-width: 75vw;
+    min-height: 130vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,21 +40,30 @@ body {
     box-sizing: border-box;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.498);
     position: relative;
+    box-sizing: border-box;
 }
 
 #groupCard{
-    height: 80vh;
-    /*width: 65vw;*/
-    margin: 10vh 30vw;*/
+    height: 80vh; 
+    min-height: 650px;
+    width: 70vw;
+    margin: 10vh 20vw;
+}
+
+#indCard{
+    height: 130vh;
+    min-height: 900px;                  
 }
 
 #langCard{
     height: 95vh;
+    min-height: 700px;                  
     margin: 2.5vh 30vw;*/
 }
 
 #extraCard{
-    height: 240vh;
+    height: 220vh;
+    min-height: 2100px;
 }
 
 .photo-wrapper{
@@ -125,11 +132,9 @@ body {
 }
 
 #group-photo{
-    height: 100vh;
 }
 
 #lang-photo{
-    height: 100vh;
 }
 
 #extraBody img{
@@ -247,8 +252,7 @@ body {
 }
 
 #extra-logo{
-    transform: translateY(-5vh);
-    margin-bottom: 5vh;
+    margin-bottom: 15vh;
 }
 
 #groupForm{
@@ -536,7 +540,32 @@ body {
 
 
 @media only screen and (max-width: 834px) {
+
+/*BODY*/
+body{
+    scroll-behavior: smooth;
+}
 /*CARD*/
+#groupCard{
+    /*width: 90vw;*/
+    margin: 10vh 15vw;
+    scroll-behavior: smooth;
+}
+
+#indCard{
+    margin: 2.5vh 15vw;
+    overflow: ;
+}
+
+#langCard{
+    height: 95vh;
+    width: 90vw;
+    margin: 2.5vh 15vw;*/
+}
+
+#extraCard{
+    width: 80vw;
+}
 
 /*PAGE INDICATOR*/
 .page{
@@ -555,7 +584,7 @@ body {
 }
 
 #extra-logo{
-    transform: translateY(-2vh);
+    transform: translateY(0vh);
 }
 
 #ind-logo{
@@ -600,5 +629,34 @@ h3 {
     font-size: 135%;
     margin-bottom: 5%;
     margin-top: 5%;
+}
+}
+
+@media only screen and (max-width: 600px) {
+body{
+    overflow-x: hidden;
+}
+
+.photo-wrapp,
+.ind-photo-wrapp,
+.lang-photo-wrapp,
+.extra-photo-wrapp{
+width: 0;
+}
+
+#groupBody{
+    background: linear-gradient(to bottom,rgb(0, 0, 0), #104b7c17, #193b51bc) ,url('../images/1.jpg') center center no-repeat; 
+}
+
+#indBody{
+    background: linear-gradient(to bottom,rgb(0, 0, 0), #104b7c17, #193b516c) ,url('../images/2.jpg') center center no-repeat;
+}
+
+#langBody{
+    background: linear-gradient(to bottom,rgb(0, 0, 0), #104b7c17, #193b516c) ,url('../images/7.jpg') center center no-repeat;
+}
+
+#extraBody{
+    background: linear-gradient(to bottom,rgb(0, 0, 0), #104b7c17, #193b516c) ,url('../images/3.jpg') center center no-repeat;
 }
 }
